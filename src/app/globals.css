@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #8B5E3C;
+  --color-primary-hover: #704B30;
+  --color-border-subtle: #F0EBE5;
+  --color-border-strong: #E8E1D9;
+  --color-surface: #F9F8F6;
+  --color-surface-accent: #F9F6F2;
+  --color-body: #FDFCFB;
+  --color-text-main: #1A1A1A;
+  --color-text-secondary: #2D2D2D;
+  --color-text-muted: #6B6B6B;
+  --color-text-hint: #8B7E74;
+}
+
+/* Animations included cleanly without raw CSS where possible, 
+   but retaining the ones required by the UI snippet */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  /* Prevent scroll bouncing overscroll effect on mobile for app-like feel */
+  overscroll-behavior-y: none;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, ui-sans-serif, system-ui, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  letter-spacing: -0.022em;
+}
